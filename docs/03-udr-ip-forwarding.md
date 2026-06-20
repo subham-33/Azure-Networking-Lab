@@ -119,14 +119,14 @@ but packets will still be dropped at the NIC. This is why Step 1
 
 ---
 
-### Step 4 — Associate the Route Table with snet-private ONLY
+### Step 4 — Associate the Route Table with snet-vms ONLY
 
 Portal → `rt-private-subnet` → Subnets → Associate
 
 | Field | Value |
 |---|---|
 | Virtual Network | vnet-lab |
-| Subnet | snet-private |
+| Subnet | snet-vms |
 
 Click **OK**.
 
@@ -156,7 +156,7 @@ vm-private-01 wants to reach 8.8.8.8 (Google DNS)
         │  Packet: [SRC: 10.20.1.5] [DST: 8.8.8.8]
         │
         ▼
-Azure SDN checks route table for snet-private:
+Azure SDN checks route table for snet-vms:
   - 10.20.0.0/16? No match (8.8.8.8 is not in this range)
   - 0.0.0.0/0? Match → Next hop: Virtual Appliance → 10.20.2.4
         │
